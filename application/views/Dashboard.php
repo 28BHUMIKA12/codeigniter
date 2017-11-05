@@ -1,6 +1,8 @@
+<?php include "common/head.php" ?>
+<?php include "common/nav.php" ?>
 
 <?php
-if(!($this->session->userdata('logged_in'))){
+if(!$is_logged_in){
  redirect('Home/Login');
 }
 
@@ -9,11 +11,16 @@ if($this->session->flashdata('welcome') ){
   }
 ?>
 
+
+
 <h1>This is new Dash bord - welcome
-<?php
-echo $this->session->userdata('first_name')." ";
-echo $this->session->userdata('last_name');
-?>
+    <?php
+    echo $this->session->userdata('first_name')." ";
+    echo $this->session->userdata('last_name');
+    ?>
 </h1>
 
-<h3><a href="<?php echo base_url('index.php/Login/LogoutUser'); ?>">Log out me</a> </h3>
+
+
+<?php include "common/scripts.php" ?>
+<?php include "common/foot.php" ?>

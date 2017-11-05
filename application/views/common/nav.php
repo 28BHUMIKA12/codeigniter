@@ -19,17 +19,25 @@
       
     </ul>
 	<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <?php if(!$is_logged_in){ ?>
 		<li class="nav-item"><a class="nav-link" href="<?php echo base_url("index.php/Home/Login"); ?>">Login</a></li>
 		<li class="nav-item"><a class="nav-link" href="<?php echo base_url("index.php/Home/Register"); ?>">Registor</a></li>
-		<li class="nav-item dropdown">
+		<?php
+        }
+        if($is_logged_in){
+
+        ?>
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Palitha
+          <?php echo $this->session->userdata('last_name'); ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Log out</a>
+          <a class="dropdown-item" href="<?php echo base_url('index.php/Login/LogoutUser'); ?>">Log out</a>
+
           <a class="dropdown-item" href="#">profile</a>
         </div>
       </li>
+        <?php } ?>
 	</ul>
   </div>
 </nav>
