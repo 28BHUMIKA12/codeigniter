@@ -29,7 +29,12 @@
         ?>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php echo $this->session->userdata('last_name'); ?>
+          <?php
+          if($this->session->flashdata('welcome') ){
+              echo "<span>".$this->session->flashdata('welcome')."</span> &nbsp; &nbsp;";
+          }
+          echo $this->session->userdata('last_name');
+          ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<?php echo base_url('index.php/Login/LogoutUser'); ?>">Log out</a>

@@ -1,17 +1,6 @@
 <?php include "common/head.php" ?>
 <?php include "common/nav.php" ?>
-
-<?php
-if(!$is_logged_in){
- redirect('Home/Login');
-}
-
-if($this->session->flashdata('welcome') ){
-    echo "<h3>".$this->session->flashdata('welcome')."</h3>";
-  }
-?>
-
-
+<?php include "common/login-check.php" ?>
 
 <h1>This is new Dash bord - welcome
     <?php
