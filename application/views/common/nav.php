@@ -39,7 +39,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<?php echo base_url('index.php/Login/LogoutUser'); ?>">Log out</a>
 
-          <a class="dropdown-item" href="<?php echo base_url("index.php/Home/Profile"); ?>">profile</a>
+          <a class="dropdown-item" href="<?php echo base_url("index.php/Profile/editProfile"); ?>">profile</a>
         </div>
       </li>
         <?php } ?>

@@ -21,11 +21,11 @@ class Profile extends CI_Controller{
             if($response){
 
                 $this->session->set_flashdata('msg', 'Registerd sucessfully please login');
-                redirect('Home/Register');
+                redirect('Home/Profile');
             }
             else{
                 $this->session->set_flashdata('msg', 'sumthing wrong');
-                redirect('Home/Register');
+                redirect('Home/Profile');
             }
         }
     }
