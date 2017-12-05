@@ -18,6 +18,11 @@ class Home extends CI_Controller {
 		$this->load->view('register');
 	}
 
+    public function Profile()
+    {
+        $this->load->view('profile');
+    }
+
 
 	
 }

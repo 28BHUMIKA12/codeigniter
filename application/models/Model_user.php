@@ -35,4 +35,18 @@ class Model_user extends CI_Model
 
     }
 
+
+
+    //fo user edit profile
+    function editUserData (){
+        $registerFormData = array(
+            'first_name' =>  $this->input->post('first_name',TRUE),
+            'last_name' =>  $this->input->post('last_name',TRUE),
+            'email' =>  $this->input->post('email',TRUE)
+
+        );
+
+        return $this->db->update('users', $registerFormData);
+
+    }
 }
